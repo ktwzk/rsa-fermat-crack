@@ -1,4 +1,4 @@
-import string, sys
+import string
 
 def isqrt(n):
   x = n
@@ -41,13 +41,19 @@ def modinv(a, m):
     return x % m
 
 
-def crack(n, e, c):
+def crack(n, e, c, output_type='str'):
     p, q = fermat(n)
     phi = (p-1) * (q-1)
     d = modinv(e, phi)
     m = pow(c, d, n)
-    m = str(hex(m))[2:-1].decode("hex")
-    return m
+    if output_type=='int':
+        return m
+    elif output_type=='str':
+        m = str(hex(m))[2:-1].decode("hex")
+        return m
+    elif output_type='hex':
+        m = str(hex(m))[2:-1]
+        return m
 
 
 
