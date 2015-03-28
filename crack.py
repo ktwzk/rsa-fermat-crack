@@ -13,7 +13,7 @@ def fermat(n, verbose=False):
 	count = 0
 	while b**2 != b2:
 		if verbose:
-			print('Trying: a=%s b2=%s b=%s' % (a, b2, b))
+			print('%s. Trying: a=%s b2=%s b=%s' % (count, a, b2, b))
 		a = a + 1
 		b2 = a**2 - n
 		b = isqrt(b2) # int(b2**0.5)
