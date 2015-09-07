@@ -1,13 +1,13 @@
-def isqrt(n):
-    x = n
-    y = (x + n // x) // 2
+def is_sqrt(number):
+    x = number
+    y = (x + number // x) // 2
     while y < x:
         x = y
-        y = (x + n // x) // 2
+        y = (x + number // x) // 2
     return x
 
 def fermat(n, verbose=False):
-	a = isqrt(n) 
+	a = is_sqrt(n) 
 	b2 = a**2 - n
 	b = isqrt(n)
 	count = 0
